@@ -8,7 +8,6 @@ class Server : public AbstractInet{
     Parser _dataParser;
     int _socket = -1;
     std::atomic<std::vector<int>*> _accSocks;
-    static std::mutex _accMtx;
 #ifdef MULTI_THREAD_PROCESSING
     std::atomic<unsigned> _atomClientsCount;
     static std::mutex _parseMtx, _logMtx, _answerMtx;
